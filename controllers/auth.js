@@ -130,7 +130,10 @@ export const forgotPassword = async (req, res) => {
     from: process.env.EMAIL_FROM,
     to: user.email,
     subject: "Password reset code",
-    html: "<h1>Your password  reset code is: {resetCode}</h1>"
+    html: `
+    <h4>Enter this code in the app to reset password</h4>
+    <h1 style="color:red;">${resetCode}</h1>
+    `
   };
   // send email
   try {
